@@ -1,5 +1,5 @@
 import { Heart, Calendar } from "lucide-react";
-import heroImage from "@/assets/hero-romantic.jpg";
+import heroImage from "@/assets/hero-classic-bw.jpg";
 
 const Hero = () => {
   return (
@@ -29,7 +29,7 @@ const Hero = () => {
 
           <div className="flex items-center justify-center gap-2 text-lg md:text-xl text-muted-foreground bg-card/80 backdrop-blur-sm rounded-full px-6 py-3 inline-flex mx-auto shadow-soft">
             <Calendar className="w-5 h-5 text-primary" />
-            <span className="font-medium">Em breve</span>
+            <span className="font-medium">8 de Novembro • 16:00h</span>
           </div>
 
           <p className="text-lg md:text-xl text-foreground/80 max-w-2xl mx-auto leading-relaxed">

@@ -8,79 +8,79 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Romantic pastel color palette */
-    --background: 345 60% 98%;
-    --foreground: 340 30% 25%;
+    /* Classic black and white color palette */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 340 30% 25%;
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 340 30% 25%;
+    --popover-foreground: 0 0% 10%;
 
-    /* Romantic pink as primary */
-    --primary: 340 82% 75%;
+    /* Classic black as primary */
+    --primary: 0 0% 10%;
     --primary-foreground: 0 0% 100%;
 
-    /* Soft beige as secondary */
-    --secondary: 30 40% 92%;
-    --secondary-foreground: 340 30% 25%;
+    /* Elegant grey as secondary */
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 10%;
 
-    --muted: 345 40% 95%;
-    --muted-foreground: 340 15% 50%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    /* Soft pink accent */
-    --accent: 340 70% 88%;
-    --accent-foreground: 340 30% 25%;
+    /* Sophisticated grey accent */
+    --accent: 0 0% 90%;
+    --accent-foreground: 0 0% 10%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 340 30% 90%;
-    --input: 340 30% 90%;
-    --ring: 340 82% 75%;
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 0 0% 20%;
 
-    --radius: 1rem;
+    --radius: 0.5rem;
 
-    /* Romantic gradient */
-    --gradient-romantic: linear-gradient(135deg, hsl(340, 82%, 85%), hsl(30, 60%, 90%));
+    /* Classic gradient */
+    --gradient-classic: linear-gradient(135deg, hsl(0, 0%, 95%), hsl(0, 0%, 100%));
     
-    /* Soft shadows */
-    --shadow-soft: 0 2px 20px -5px hsl(340 50% 85% / 0.4);
-    --shadow-card: 0 4px 30px -10px hsl(340 50% 80% / 0.3);
+    /* Elegant shadows */
+    --shadow-soft: 0 2px 20px -5px hsl(0 0% 0% / 0.15);
+    --shadow-card: 0 4px 30px -10px hsl(0 0% 0% / 0.1);
     
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .dark {
-    --background: 340 35% 12%;
-    --foreground: 345 50% 95%;
+    --background: 0 0% 10%;
+    --foreground: 0 0% 95%;
 
-    --card: 340 30% 15%;
-    --card-foreground: 345 50% 95%;
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 340 30% 15%;
-    --popover-foreground: 345 50% 95%;
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 340 75% 65%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 0 0% 95%;
+    --primary-foreground: 0 0% 10%;
 
-    --secondary: 340 20% 20%;
-    --secondary-foreground: 345 50% 95%;
+    --secondary: 0 0% 20%;
+    --secondary-foreground: 0 0% 95%;
 
-    --muted: 340 20% 18%;
-    --muted-foreground: 345 25% 65%;
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 60%;
 
-    --accent: 340 60% 30%;
-    --accent-foreground: 345 50% 95%;
+    --accent: 0 0% 25%;
+    --accent-foreground: 0 0% 95%;
 
     --destructive: 0 62.8% 50.6%;
-    --destructive-foreground: 345 50% 95%;
+    --destructive-foreground: 0 0% 95%;
 
-    --border: 340 20% 25%;
-    --input: 340 20% 25%;
-    --ring: 340 75% 65%;
+    --border: 0 0% 25%;
+    --input: 0 0% 25%;
+    --ring: 0 0% 80%;
   }
 }
 
@@ -120,8 +120,8 @@ All colors MUST be HSL.
     }
   }
 
-  .gradient-romantic {
-    background: var(--gradient-romantic);
+  .gradient-classic {
+    background: var(--gradient-classic);
   }
 
   .shadow-soft {
