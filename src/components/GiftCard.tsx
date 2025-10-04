@@ -4,18 +4,20 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Gift, MessageCircle, Check } from "lucide-react";
+import { CreditCard, Gift, MessageCircle, Check } from "lucide-react";
 import { toast } from "sonner";
+import PixPaymentModal from "./PixPaymentModal";
 
 interface GiftCardProps {
   name: string;
   image: string;
-  link: string;
+  price: string;
   isPurchased: boolean;
 }
 
-const GiftCard = ({ name, image, link, isPurchased }: GiftCardProps) => {
+const GiftCard = ({ name, image, price, isPurchased }: GiftCardProps) => {
   const [showMessageForm, setShowMessageForm] = useState(false);
+  const [showPixModal, setShowPixModal] = useState(false);
   const [guestName, setGuestName] = useState("");
   const [message, setMessage] = useState("");
   const [purchased, setPurchased] = useState(isPurchased);
@@ -61,25 +63,14 @@ const GiftCard = ({ name, image, link, isPurchased }: GiftCardProps) => {
 
         <div className="space-y-3">
           {!purchased ? (
-            <>
-              <Button 
-                className="w-full" 
-                variant="default"
-                onClick={() => window.open(link, '_blank')}
-              >
-                <ExternalLink className="w-4 h-4 mr-2" />
-                Ver produto
-              </Button>
-              
-              <Button 
-                className="w-full" 
-                variant="secondary"
-                onClick={handleMarkAsPurchased}
-              >
-                <Gift className="w-4 h-4 mr-2" />
-                Marcar como comprado
-              </Button>
-            </>
+            <Button 
+              className="w-full" 
+              variant="default"
+              onClick={() => setShowPixModal(true)}
+            >
+              <CreditCard className="w-4 h-4 mr-2" />
+              Pagar com PIX - R$ {price}
+            </Button>
           ) : (
             <Button 
               className="w-full" 
@@ -124,6 +115,13 @@ const GiftCard = ({ name, image, link, isPurchased }: GiftCardProps) => {
           </Button>
         </CardFooter>
       )}
+
+      <PixPaymentModal
+        isOpen={showPixModal}
+        onClose={() => setShowPixModal(false)}
+        giftName={name}
+        amount={price}
+      />
     </Card>
   );
 };

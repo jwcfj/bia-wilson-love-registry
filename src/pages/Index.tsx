@@ -12,21 +12,21 @@ const Index = () => {
       id: 1,
       name: "Jogo de Panelas",
       image: "https://images.unsplash.com/photo-1584990347449-39b4aa1f248d?w=500&q=80",
-      link: "https://example.com",
+      price: "350.00",
       isPurchased: false
     },
     {
       id: 2,
       name: "Liquidificador",
       image: "https://images.unsplash.com/photo-1570222094114-d054a817e56b?w=500&q=80",
-      link: "https://example.com",
+      price: "180.00",
       isPurchased: false
     },
     {
       id: 3,
       name: "Jogo de Facas",
       image: "https://images.unsplash.com/photo-1593618998160-e34014e67546?w=500&q=80",
-      link: "https://example.com",
+      price: "120.00",
       isPurchased: true
     }
   ];
@@ -36,21 +36,21 @@ const Index = () => {
       id: 4,
       name: "Almofadas Decorativas",
       image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500&q=80",
-      link: "https://example.com",
+      price: "90.00",
       isPurchased: false
     },
     {
       id: 5,
       name: "Vaso Decorativo",
       image: "https://images.unsplash.com/photo-1578500494198-246f612d3b3d?w=500&q=80",
-      link: "https://example.com",
+      price: "75.00",
       isPurchased: false
     },
     {
       id: 6,
       name: "Porta Retratos",
       image: "https://images.unsplash.com/photo-1513519245088-0e12902e35ca?w=500&q=80",
-      link: "https://example.com",
+      price: "45.00",
       isPurchased: false
     }
   ];
@@ -60,21 +60,21 @@ const Index = () => {
       id: 7,
       name: "Jogo de Cama",
       image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=500&q=80",
-      link: "https://example.com",
+      price: "250.00",
       isPurchased: false
     },
     {
       id: 8,
       name: "Edredom",
       image: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=500&q=80",
-      link: "https://example.com",
+      price: "300.00",
       isPurchased: false
     },
     {
       id: 9,
       name: "Travesseiros",
       image: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=500&q=80",
-      link: "https://example.com",
+      price: "150.00",
       isPurchased: false
     }
   ];
@@ -84,21 +84,21 @@ const Index = () => {
       id: 10,
       name: "Jogo de Toalhas",
       image: "https://images.unsplash.com/photo-1620735692151-26a7e0748429?w=500&q=80",
-      link: "https://example.com",
+      price: "120.00",
       isPurchased: false
     },
     {
       id: 11,
       name: "Organizador de Banheiro",
       image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=500&q=80",
-      link: "https://example.com",
+      price: "85.00",
       isPurchased: false
     },
     {
       id: 12,
       name: "Espelho Decorativo",
       image: "https://images.unsplash.com/photo-1618220179428-22790b461013?w=500&q=80",
-      link: "https://example.com",
+      price: "200.00",
       isPurchased: false
     }
   ];

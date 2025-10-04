@@ -4,7 +4,7 @@ interface Gift {
   id: number;
   name: string;
   image: string;
-  link: string;
+  price: string;
   isPurchased: boolean;
 }
 
