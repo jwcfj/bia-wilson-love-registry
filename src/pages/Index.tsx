@@ -10,97 +10,139 @@ const Index = () => {
   const kitchenGifts = [
     {
       id: 1,
-      name: "Jogo de Panelas",
-      image: "https://images.unsplash.com/photo-1584990347449-39b4aa1f248d?w=500&q=80",
-      price: "350.00",
+      name: "Kit 10 Pano de Prato Atoalhado",
+      image: "https://m.media-amazon.com/images/I/61b52rcguwL._AC_SL1200_.jpg",
+      price: "78.00",
       isPurchased: false
     },
     {
       id: 2,
-      name: "Liquidificador",
-      image: "https://images.unsplash.com/photo-1570222094114-d054a817e56b?w=500&q=80",
-      price: "180.00",
+      name: "Tabua de carne de vidro",
+      image: "https://m.media-amazon.com/images/I/41O78Zdt9OL._AC_SL1024_.jpg",
+      price: "87.00",
       isPurchased: false
     },
     {
       id: 3,
-      name: "Jogo de Facas",
-      image: "https://images.unsplash.com/photo-1593618998160-e34014e67546?w=500&q=80",
-      price: "120.00",
-      isPurchased: true
-    }
-  ];
-
-  const livingRoomGifts = [
+      name: "Jogo de Jogo De Copos 6 Peças De Vidro 400ml",
+      image: "https://m.media-amazon.com/images/I/619Tcje1n0L._AC_SL1200_.jpg",
+      price: "50.00",
+      isPurchased: false
+    },
     {
       id: 4,
-      name: "Almofadas Decorativas",
-      image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500&q=80",
-      price: "90.00",
+      name: " Estojo com 6 Xícaras Café com Pires",
+      image: "https://m.media-amazon.com/images/I/51MeR1-gp2L._AC_SL1500_.jpg",
+      price: "80.00",
       isPurchased: false
     },
     {
       id: 5,
-      name: "Vaso Decorativo",
-      image: "https://images.unsplash.com/photo-1578500494198-246f612d3b3d?w=500&q=80",
-      price: "75.00",
+      name: "Kit de Utensílios de Cozinha com 5 Peças em Bambú e Suporte",
+      image: "https://m.media-amazon.com/images/I/61Ck2CYAxBL._AC_SL1200_.jpg",
+      price: "40.00",
       isPurchased: false
     },
     {
       id: 6,
-      name: "Porta Retratos",
-      image: "https://images.unsplash.com/photo-1513519245088-0e12902e35ca?w=500&q=80",
-      price: "45.00",
+      name: " Abridor de Latas, Abridor de Latas 3 em 1",
+      image: "https://m.media-amazon.com/images/I/51dA5F6qYNL._AC_SL1000_.jpg",
+      price: "80.00",
       isPurchased: false
-    }
-  ];
-
-  const bedroomGifts = [
+    },
     {
       id: 7,
-      name: "Jogo de Cama",
-      image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=500&q=80",
-      price: "250.00",
+      name: "Churrasqueira Fogão Grill Antiaderente Preta",
+      image: "https://m.media-amazon.com/images/I/312p+J-XndL._AC_.jpg",
+      price: "100.00",
       isPurchased: false
     },
     {
       id: 8,
-      name: "Edredom",
-      image: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=500&q=80",
-      price: "300.00",
+      name: "Garrafa Térmica de Plástico com Cabo de Madeira Nórdica 1L Branca",
+      image: "https://m.media-amazon.com/images/I/61pKKvoWtSL._AC_SL1500_.jpg",
+      price: "90.00",
       isPurchased: false
     },
     {
       id: 9,
-      name: "Travesseiros",
-      image: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=500&q=80",
-      price: "150.00",
+      name: "Jarra de Vidro 1,2L com Tampa de Bambu",
+      image: "https://down-br.img.susercontent.com/file/a53189ca39f3de23dc5a7564fd4f9711",
+      price: "60.00",
       isPurchased: false
     }
   ];
 
-  const bathroomGifts = [
+  // const livingRoomGifts = [
+  //   {
+  //     id: 11,
+  //     name: "Almofadas Decorativas",
+  //     image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500&q=80",
+  //     price: "90.00",
+  //     isPurchased: false
+  //   },
+  //   {
+  //     id: 12,
+  //     name: "Vaso Decorativo",
+  //     image: "https://images.unsplash.com/photo-1578500494198-246f612d3b3d?w=500&q=80",
+  //     price: "75.00",
+  //     isPurchased: false
+  //   },
+  //   {
+  //     id: 13,
+  //     name: "Porta Retratos",
+  //     image: "https://images.unsplash.com/photo-1513519245088-0e12902e35ca?w=500&q=80",
+  //     price: "45.00",
+  //     isPurchased: false
+  //   }
+  // ];
+
+  const bedroomGifts = [
     {
       id: 10,
-      name: "Jogo de Toalhas",
-      image: "https://images.unsplash.com/photo-1620735692151-26a7e0748429?w=500&q=80",
-      price: "120.00",
+      name: "Jogo de Lençol 100% Algodão Premium Extra Macio - Roupa De Cama Antiácaro, Inclui Lençol Com Elástico (Forro) E Fronhas (Azul-marinho, Queen Simples (3 peças)",
+      image: "https://m.media-amazon.com/images/I/51JTtdy-e0L._AC_SL1200_.jpg",
+      price: "100.00",
       isPurchased: false
     },
     {
       id: 11,
-      name: "Organizador de Banheiro",
-      image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=500&q=80",
-      price: "85.00",
+      name: "Jogo de Lençol 100% Algodão Premium Extra Macio - Roupa De Cama Antiácaro, Inclui Lençol Com Elástico (Forro) E Fronhas (Bege, Queen Simples (3 peças)",
+      image: "https://m.media-amazon.com/images/I/51xyo9h8NoL._AC_SL1200_.jpg",
+      price: "100.00",
+      isPurchased: false
+    },
+    // {
+    //   id: 12,
+    //   name: "Travesseiros",
+    //   image: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=500&q=80",
+    //   price: "150.00",
+    //   isPurchased: false
+    // }
+  ];
+
+  const bathroomGifts = [
+    {
+      id: 14,
+      name: "Bacia Plástica 14 Litros Para Limpeza Casa Lavanderia Roupas Com Pegadores Laterais",
+      image: "https://m.media-amazon.com/images/I/51rVyOAAbwL._AC_SL1299_.jpg",
+      price: "65.00",
       isPurchased: false
     },
     {
-      id: 12,
-      name: "Espelho Decorativo",
-      image: "https://images.unsplash.com/photo-1618220179428-22790b461013?w=500&q=80",
-      price: "200.00",
+      id: 15,
+      name: "Lixeira com Pedal em Aço Inox Tramontina",
+      image: "https://m.media-amazon.com/images/I/41uJmkp13GS._AC_SL1500_.jpg",
+      price: "67.00",
       isPurchased: false
-    }
+    },
+    // {
+    //   id: 12,
+    //   name: "Espelho Decorativo",
+    //   image: "https://images.unsplash.com/photo-1618220179428-22790b461013?w=500&q=80",
+    //   price: "200.00",
+    //   isPurchased: false
+    // }
   ];
 
   return (
@@ -127,11 +169,11 @@ const Index = () => {
               gifts={kitchenGifts}
             />
 
-            <GiftCategory 
+            {/* <GiftCategory 
               title="Sala" 
               icon={<Sofa className="w-10 h-10" />}
               gifts={livingRoomGifts}
-            />
+            /> */}
 
             <GiftCategory 
               title="Quarto" 
