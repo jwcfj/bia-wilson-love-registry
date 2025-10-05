@@ -70,6 +70,62 @@ const Index = () => {
       image: "https://down-br.img.susercontent.com/file/a53189ca39f3de23dc5a7564fd4f9711",
       price: "60.00",
       isPurchased: false
+    },
+    {
+      id: 10,
+      name: "Kit 4 peças descanço de panela de bambu redondo",
+      image: "https://m.media-amazon.com/images/I/71x25bc9XuL._AC_SL1500_.jpg",
+      price: "70",
+      isPurchased: false
+    },
+    {
+      id: 11,
+      name: "Fervedor/Leiteira cereja",
+      image: "https://m.media-amazon.com/images/I/51a2C0ZeUVL._AC_SL1000_.jpg",
+      price: "70",
+      isPurchased: false
+    },
+    {
+      id: 12,
+      name: "Oven Gloves with Non-Slip",
+      image: "https://m.media-amazon.com/images/I/81Oq4aOMksL._AC_SL1500_.jpg",
+      price: "62",
+      isPurchased: false
+    },
+    {
+      id: 13,
+      name: "Açucareiro Tramontina em Aço Inox com Colher",
+      image: "https://m.media-amazon.com/images/I/51ZrEK-mT7L._AC_.jpg",
+      price: "86.50",
+      isPurchased: false
+    },
+    {
+      id: 14,
+      name: "Kit Potes Herméticos de vidro 4 Unidades com Tampas de Bambu 450ml Organização de Cozinha",
+      image: "https://m.media-amazon.com/images/I/714kaZc7RWL._AC_SL1200_.jpg",
+      price: "70",
+      isPurchased: false
+    },
+    {
+      id: 15,
+      name: "Jogo De Frigideiras 2 Peças Alumínio Tramontina",
+      image: "https://m.media-amazon.com/images/I/51-qapztIfL._AC_SL1200_.jpg",
+      price: "50",
+      isPurchased: false
+    },
+    {
+      id: 16,
+      name: "Frigideira Funda Tramontina Loreto em Alumínio com Revestimento Interno Antiaderente Starflon Max Vermelho",
+      image: "https://m.media-amazon.com/images/I/51MmOQszDWL._AC_SL1000_.jpg",
+      price: "72",
+      isPurchased: false
+    },
+    {
+      id: 17,
+      name: "Kit Utensílios de Cozinha 6 Peças",
+      image: "https://images.openai.com/thumbnails/url/99PP7nicDcldDoIgAADgE6Ux1xxurWmZ1UOaLrInhkDgL5Rk6W06Vrep7_X7fqQxuvdsm3f0MWrD2cwU3dwSvSGmpBZVrd1LpXXZidV9-T_PPzIY0VRLF55IDoqkvCROdhbrZsLohnmL3AUEF4KgX-1r7mx28Zs95YhfflTBOlVRgUh1bcUwDRkJYuO4YIvTA4mnPFVcBFlYMqdBDIOQsvAHGyM56w",
+      price: "90.00",
+      isPurchased: false
     }
   ];
 
@@ -99,14 +155,14 @@ const Index = () => {
 
   const bedroomGifts = [
     {
-      id: 10,
+      id: 18,
       name: "Jogo de Lençol 100% Algodão Premium Extra Macio - Roupa De Cama Antiácaro, Inclui Lençol Com Elástico (Forro) E Fronhas (Azul-marinho, Queen Simples (3 peças)",
       image: "https://m.media-amazon.com/images/I/51JTtdy-e0L._AC_SL1200_.jpg",
       price: "100.00",
       isPurchased: false
     },
     {
-      id: 11,
+      id: 19,
       name: "Jogo de Lençol 100% Algodão Premium Extra Macio - Roupa De Cama Antiácaro, Inclui Lençol Com Elástico (Forro) E Fronhas (Bege, Queen Simples (3 peças)",
       image: "https://m.media-amazon.com/images/I/51xyo9h8NoL._AC_SL1200_.jpg",
       price: "100.00",
@@ -123,17 +179,45 @@ const Index = () => {
 
   const bathroomGifts = [
     {
-      id: 14,
+      id: 20,
       name: "Bacia Plástica 14 Litros Para Limpeza Casa Lavanderia Roupas Com Pegadores Laterais",
       image: "https://m.media-amazon.com/images/I/51rVyOAAbwL._AC_SL1299_.jpg",
       price: "65.00",
       isPurchased: false
     },
     {
-      id: 15,
+      id: 21,
       name: "Lixeira com Pedal em Aço Inox Tramontina",
       image: "https://m.media-amazon.com/images/I/41uJmkp13GS._AC_SL1500_.jpg",
       price: "67.00",
+      isPurchased: false
+    },
+    {
+      id: 22,
+      name: "Suporte para Vassouras e Rodo de Parede com 9 Acessórios",
+      image: "https://m.media-amazon.com/images/I/71P34NCHcfL._AC_SL1500_.jpg",
+      price: "59.00",
+      isPurchased: false
+    },
+    {
+      id: 23,
+      name: "Kit Limpeza 1 Vassoura Varre Muito Interna 1 Varre Fácil 1 Rodo 30cm 1 Pá Caçamba Condor",
+      image: "https://m.media-amazon.com/images/I/61AmbRV7g3L._AC_SL1200_.jpg",
+      price: "90.00",
+      isPurchased: false
+    },
+    {
+      id: 24,
+      name: "Kit Banheiro/Lavabo. 3 Peças de Porcelana e Bambu, Dispenser/Porta Sabonete Líquido e Porta Escova com Base de Bambu",
+      image: "https://m.media-amazon.com/images/I/51OnIuehLKL._AC_SL1080_.jpg",
+      price: "73.00",
+      isPurchased: false
+    },
+    {
+      id: 25,
+      name: "Balde Plástico Redondo GRANDE 15 Litros",
+      image: "https://m.media-amazon.com/images/I/410AjbSdJFL._AC_SL1500_.jpg",
+      price: "55.00",
       isPurchased: false
     },
     // {

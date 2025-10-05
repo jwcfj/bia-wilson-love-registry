@@ -44,7 +44,7 @@ const GiftCard = ({ name, image, price, isPurchased }: GiftCardProps) => {
         <img 
           src={image} 
           alt={name}
-          className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+          className="w-full h-full object-contain transition-transform duration-300 hover:scale-110"
         />
         {purchased && (
           <div className="absolute inset-0 bg-muted/90 flex items-center justify-center">
