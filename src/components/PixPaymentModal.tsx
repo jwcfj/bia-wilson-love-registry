@@ -15,16 +15,18 @@ interface PixPaymentModalProps {
   onClose: () => void;
   giftName: string;
   amount: string;
+  code:string;
+  image_path:string;
 }
 
-const PixPaymentModal = ({ isOpen, onClose, giftName, amount }: PixPaymentModalProps) => {
+const PixPaymentModal = ({ isOpen, onClose, giftName, amount , code,image_path}: PixPaymentModalProps) => {
   const [copied, setCopied] = useState(false);
   
   // Código PIX de exemplo - em produção, isso viria de uma API
   const pixCode = "00020126580014BR.GOV.BCB.PIX0136chave-pix-exemplo@email.com520400005303986540" + amount + ".005802BR5913Nome do Casal6009SAO PAULO62070503***63041D3D";
 
   const handleCopyPixCode = () => {
-    navigator.clipboard.writeText(pixCode);
+    navigator.clipboard.writeText(code);
     setCopied(true);
     toast.success("Código PIX copiado!");
     setTimeout(() => setCopied(false), 2000);
@@ -49,13 +51,19 @@ const PixPaymentModal = ({ isOpen, onClose, giftName, amount }: PixPaymentModalP
 
           {/* QR Code Placeholder */}
           <div className="w-64 h-64 bg-card border-2 border-border rounded-lg flex items-center justify-center p-4">
-            <div className="w-full h-full bg-foreground/10 rounded flex items-center justify-center">
-              <div className="text-center">
-                <div className="w-48 h-48 mx-auto bg-white border-4 border-foreground rounded-lg mb-2" />
-                <p className="text-sm text-muted-foreground">QR Code PIX</p>
-              </div>
-            </div>
-          </div>
+  <div className="w-full h-full bg-foreground/10 rounded flex items-center justify-center">
+    <div className="text-center">
+      <div className="w-48 h-48 mx-auto bg-white border-4 border-foreground rounded-lg mb-2 flex items-center justify-center">
+        <img
+          src={image_path}
+          className="w-full h-full object-contain transition-transform duration-300 hover:scale-110"
+        />
+      </div>
+      <p className="text-sm text-muted-foreground">QR Code PIX</p>
+    </div>
+  </div>
+</div>
+
 
           <div className="w-full space-y-3">
             <p className="text-sm text-muted-foreground text-center">
@@ -64,7 +72,7 @@ const PixPaymentModal = ({ isOpen, onClose, giftName, amount }: PixPaymentModalP
             
             <div className="flex gap-2">
               <div className="flex-1 p-3 bg-muted rounded-lg text-xs break-all font-mono">
-                {pixCode.substring(0, 50)}...
+                {code.substring(0, 50)}...
               </div>
               <Button
                 variant="outline"
@@ -81,10 +89,10 @@ const PixPaymentModal = ({ isOpen, onClose, giftName, amount }: PixPaymentModalP
             </div>
           </div>
 
-          <div className="w-full text-center text-sm text-muted-foreground">
+          {/* <div className="w-full text-center text-sm text-muted-foreground">
             <p>Após realizar o pagamento,</p>
             <p>aguarde a confirmação automática</p>
-          </div>
+          </div> */}
 
           <Button
             variant="secondary"

@@ -12,10 +12,12 @@ interface GiftCardProps {
   name: string;
   image: string;
   price: string;
+  code: string;
   isPurchased: boolean;
+  image_path: string;
 }
 
-const GiftCard = ({ name, image, price, isPurchased }: GiftCardProps) => {
+const GiftCard = ({ name, image, price, code ,isPurchased , image_path}: GiftCardProps) => {
   const [showMessageForm, setShowMessageForm] = useState(false);
   const [showPixModal, setShowPixModal] = useState(false);
   const [guestName, setGuestName] = useState("");
@@ -121,6 +123,9 @@ const GiftCard = ({ name, image, price, isPurchased }: GiftCardProps) => {
         onClose={() => setShowPixModal(false)}
         giftName={name}
         amount={price}
+        code= {code}
+        image_path={image_path}
+
       />
     </Card>
   );

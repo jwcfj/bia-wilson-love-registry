@@ -5,7 +5,9 @@ interface Gift {
   name: string;
   image: string;
   price: string;
+  code: string;
   isPurchased: boolean;
+  image_path: string;
 }
 
 interface GiftCategoryProps {
