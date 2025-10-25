@@ -1,48 +1,60 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { MessageCircleHeart, Send } from "lucide-react";
 import { toast } from "sonner";
+import axios from "axios";
 
 interface Message {
   id: number;
-  name: string;
+  author: string;
   message: string;
-  date: string;
 }
 
 const MessagesSection = () => {
   const [guestName, setGuestName] = useState("");
   const [message, setMessage] = useState("");
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      id: 1,
-      name: "Maria & João",
-      message: "Desejamos toda felicidade do mundo para vocês! Que essa nova jornada seja repleta de amor e cumplicidade 💕",
-      date: "Há 2 dias"
-    },
-    {
-      id: 2,
-      name: "Ana Clara",
-      message: "Muito feliz por vocês! Que Deus abençoe essa união linda ❤️",
-      date: "Há 1 dia"
-    }
-  ]);
+  const [messages, setMessages] = useState<Message[]>([]);
 
-  const handleSubmit = () => {
+  useEffect(() => {
+    const fetchMessages = async () => {
+      try {
+        const response = await axios.get(`http://localhost:8080/wedding-messages?size=10000&page=0`);
+        // Supondo que o Spring Boot retorne um Page<Message> com content
+        setMessages(response.data.content);
+      } catch (error) {
+        console.error("Erro ao buscar mensagens:", error);
+      }
+    };
+
+    fetchMessages();
+  }, [1, 1000]);
+
+  const handleSubmit = async () =>  {
     if (guestName.trim() && message.trim()) {
-      const newMessage: Message = {
-        id: messages.length + 1,
-        name: guestName,
-        message: message,
-        date: "Agora"
-      };
-      setMessages([newMessage, ...messages]);
+      const newMessage = {
+      author: guestName,
+      message: message,
+    };
+      try {
+      // Envia para o backend
+      const response = await axios.post(
+        "http://localhost:8080/wedding-messages",
+        newMessage
+      );
+
+      // Atualiza o estado local com o que o backend retornou (normalmente já vem o id)
+      setMessages([response.data, ...messages]);
+
       setGuestName("");
       setMessage("");
       toast.success("Mensagem enviada com sucesso! 💌");
+    } catch (error) {
+      console.error("Erro ao enviar mensagem:", error);
+      toast.error("Erro ao enviar mensagem. Tente novamente!");
+    }
     } else {
       toast.error("Por favor, preencha todos os campos");
     }
@@ -95,11 +107,11 @@ const MessagesSection = () => {
                 <CardContent className="p-6">
                   <div className="flex justify-between items-start mb-3">
                     <h4 className="font-semibold text-lg text-foreground font-cursive">
-                      {msg.name}
+                      {msg.author}
                     </h4>
-                    <span className="text-sm text-muted-foreground">
+                    {/* <span className="text-sm text-muted-foreground">
                       {msg.date}
-                    </span>
+                    </span> */}
                   </div>
                   <p className="text-foreground/80 leading-relaxed">
                     {msg.message}
