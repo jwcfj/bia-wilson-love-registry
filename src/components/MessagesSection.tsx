@@ -21,7 +21,7 @@ const MessagesSection = () => {
   useEffect(() => {
     const fetchMessages = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/wedding-messages?size=10000&page=0`);
+        const response = await axios.get(`https://meusite.sbs/wedding-messages?size=10000&page=0`);
         // Supondo que o Spring Boot retorne um Page<Message> com content
         setMessages(response.data.content);
       } catch (error) {
@@ -41,7 +41,7 @@ const MessagesSection = () => {
       try {
       // Envia para o backend
       const response = await axios.post(
-        "http://localhost:8080/wedding-messages",
+        "https://meusite.sbs:8080/wedding-messages",
         newMessage
       );
 

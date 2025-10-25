@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { CreditCard, Gift, MessageCircle, Check } from "lucide-react";
 import { toast } from "sonner";
 import PixPaymentModal from "./PixPaymentModal";
+import axios from "axios";
 
 interface GiftCardProps {
   name: string;
@@ -16,7 +17,11 @@ interface GiftCardProps {
   isPurchased: boolean;
   image_path: string;
 }
-
+interface Message {
+  id: number;
+  author: string;
+  message: string;
+}
 const GiftCard = ({ name, image, price, code ,isPurchased , image_path}: GiftCardProps) => {
   const [showMessageForm, setShowMessageForm] = useState(false);
   const [showPixModal, setShowPixModal] = useState(false);
@@ -29,15 +34,33 @@ const GiftCard = ({ name, image, price, code ,isPurchased , image_path}: GiftCar
     toast.success("Obrigado por presentear o casal! 💕");
   };
 
-  const handleSendMessage = () => {
+  const handleSendMessage =  async () => {
     if (guestName.trim() && message.trim()) {
+      const newMessage = {
+        author: guestName,
+        message: message,
+      };
+
+     try {
+      // Envia para o backend
+      const response = await axios.post(
+        "https://meusite.sbs:8080/wedding-messages",
+        newMessage
+      );
+
+
       toast.success("Mensagem enviada com sucesso! 💌");
       setShowMessageForm(false);
       setGuestName("");
       setMessage("");
-    } else {
-      toast.error("Por favor, preencha seu nome e mensagem");
+    } catch (error) {
+      console.error("Erro ao enviar mensagem:", error);
+      toast.error("Erro ao enviar mensagem. Tente novamente!");
     }
+  }
+  else {
+    toast.error("Por favor, preencha seu nome e mensagem");
+  }
   };
 
   return (

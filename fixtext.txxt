@@ -1,0 +1,64 @@
+ubuntu@ip-172-31-24-160:~/-WeddingMessagesApi$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   .env
+	modified:   docker-compose.yml
+	modified:   src/main/resources/application.properties
+
+no changes added to commit (use "git add" and/or "git commit -a")
+ubuntu@ip-172-31-24-160:~/-WeddingMessagesApi$ cat .env
+MYSQL_USER=admin
+MYSQL_PASSWORD=RX<O2owS6qC6ls!PF8>8V.ThZ3)W
+MYSQL_DATABASE=wedding
+ubuntu@ip-172-31-24-160:~/-WeddingMessagesApi$ cat docker-compose.yml
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    depends_on:
+      mysqldb:
+        condition: service_healthy
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://database-1-instance-1.cl00womsumff.us-east-2.rds.amazonaws.com:3306/${MYSQL_DATABASE}
+      - SPRING_DATASOURCE_USERNAME=${MYSQL_USER}
+      - SPRING_DATASOURCE_PASSWORD=${MYSQL_PASSWORD}
+    networks:
+      - springboot-mysql-network
+  mysqldb:
+    image: mysql:8.0.33
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_PASSWORD}
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - springboot-mysql-network
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      retries: 10
+      interval: 3s
+      timeout: 30s
+volumes:
+  mysql-data:
+networks:
+  springboot-mysql-network:
+    name: springboot-mysql-network
+ubuntu@ip-172-31-24-160:~/-WeddingMessagesApi$ cat src/main/resources/application.properties
+spring.datasource.url=jdbc:mysql://database-1-instance-1.cl00womsumff.us-east-2.rds.amazonaws.com:3306/wedding
+spring.datasource.username=admin
+spring.datasource.password=RX<O2owS6qC6ls!PF8>8V.ThZ3)W
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+hibernate.dialect=org.hibernate.dialect.MySQLDialect
+spring.jpa.show-sql=true
+spring.jpa.format-sql=true
+management.metrics.enable.all=false
+ubuntu@ip-172-31-24-160:~/-WeddingMessagesApi$ 
