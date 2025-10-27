@@ -44,7 +44,7 @@ const GiftCard = ({ name, image, price, code ,isPurchased , image_path}: GiftCar
      try {
       // Envia para o backend
       const response = await axios.post(
-        "https://meusite.sbs:8080/wedding-messages",
+        "https://meusite.sbs/wedding-messages",
         newMessage
       );
 
